@@ -1,0 +1,28 @@
+@font-face {
+  src: url(../css/fonts/Epokha\ Std\ Regular.otf);
+  font-family: Epokha;
+}
+
+body {
+  background-image: url("../css/images/reference/beer-strology.png");
+  background-repeat: no-repeat;
+  color: orange;
+  width: 100%;
+  height: auto;
+  background-size: 100%
+}
+
+.formContainer {
+  background: #999999da;
+  font-family: Epokha;
+  font-size: 3em;
+  color: #333399;
+  Width:55%;
+  height: 5em;
+  position: absolute;
+  bottom: 2em;
+  margin-left : 5em;
+  text-align: right;
+  padding: 1em;
+  border-radius: 1em 1em 0em 0em; 
+}
