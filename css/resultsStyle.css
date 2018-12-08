@@ -1,0 +1,33 @@
+body {
+  background-image: url("../images/StarsTable_Background_withBeer.jpg");
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.container {
+  background-color: aliceblue;
+  width: 650px;
+  height: 350px;
+  align-content: center;
+  margin-left: auto;
+  margin-right: 350px;
+  margin-top: 150px;
+  text-align: center;
+  border-radius: 15px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
