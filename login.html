@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+    <script  src="https://code.jquery.com/jquery-3.3.1.min.js"  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
+
+    <title>Sign up</title>
+    <link rel="stylesheet" href="css/foundation.css">
+</head>
+<body>
+
+<!-- login/signup screen -->
+<div>
+  <h2>Logform in to Beerstrology</h2>
+  
+      <div class="grid-x grid-padding-x">
+          <div class="large-12 cell">
+            <div class="callout">
+
+                <div class="grid-x grid-padding-x">
+                  <div class="large-4 medium-4 cell">
+                    <label>Email</label>
+                    <input type="email" placeholder="@email.com" id="email"/>
+                  </div>
+                  <div class="large-4 medium-4 cell">
+                    <label>Password</label>
+                    <input type="password" placeholder="password" id="password"/>
+                  </div>
+                  
+                </div>
+                <div id="welcomeMsg"></div>
+                <a href="#" class="button" id="login-user">Login</a>
+                <a href="#" class="button" id="signup-user">Sign Up</a>
+                <a href="#" class="button hidden" id="signout-user">Sign Out</a><br/>
+  </form>
+</div>
+<script src="js/login.js"></script>
+<script src="js/vendor/jquery.js"></script>
+<script src="js/vendor/what-input.js"></script>
+<script src="js/vendor/foundation.js"></script>
+
+</body>
+</html>

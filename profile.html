@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+    <script  src="https://code.jquery.com/jquery-3.3.1.min.js"  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
+
+    <title>Profile</title>
+    <link rel="stylesheet" href="css/foundation.css">
+</head>
+<body>
+
+<!-- first, userID, PW, birthday -->
+<div>
+  <h2>Let's get you signed up!</h2>
+  <form>
+      <div class="grid-x grid-padding-x">
+          <div class="large-12 cell">
+            <div class="callout">
+              <h4>We just need a little information to get started: </h4>
+
+                <div class="grid-x grid-padding-x">
+                  <div class="large-4 medium-4 cell">
+                    <label>First Name</label>
+                    <input type="text" placeholder="First Name" id="first-name"/>
+                  </div>
+                  <div class="large-4 medium-4 cell">
+                    <label>Last Name</label>
+                    <input type="text" placeholder="Last Name" id="last-name"/>
+                  </div>
+                  
+                </div>
+
+                <div class="grid-x grid-padding-x">
+                    <div class="large-4 medium-4 cell">
+                        <label>Birthday</label>
+                        <input type="date" id="birthday"/>
+                      </div>
+                </div>
+
+                <div class="grid-x grid-padding-x">
+                    <div class="large-12 cell">
+                      <label>A little about yourself:</label>
+                      <textarea placeholder="What kind of beer do you like?" rows="3" id="personal-statement"></textarea>
+                    </div>
+                </div>
+
+                <div class="grid-x grid-padding-x">
+                    <div class="large-4 medium-4 cell">
+                      <label>User Name</label>
+                      <input type="text" placeholder="Choose a user name" id="user-name" />
+                    </div>
+                </div>
+
+                <!-- maybe a place to upload a photo -->
+
+                <a href="#" class="button" id="submit-user">Submit</a><br/>
+  </form>
+</div>
+<script src="js/profile.js"></script>
+<script src="js/vendor/jquery.js"></script>
+<script src="js/vendor/what-input.js"></script>
+<script src="js/vendor/foundation.js"></script>
+
+</body>
+</html>
