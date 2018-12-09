@@ -29,7 +29,9 @@ firebase.auth().onAuthStateChanged(user => {
             var lastName = snapshot.val().lastName;
             var birthday = snapshot.val().birthday;
             var persStatment = snapshot.val().personalStatement;
+            var userPic = snapshot.val().profile_picture;
 
+            $("#info-picture").attr("src", userPic);
             $("#info-first-name").text(firstName);
             $("#info-last-name").text(lastName);
             $("#info-birthday").text(birthday);
