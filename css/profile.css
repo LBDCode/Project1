@@ -1,0 +1,32 @@
+/*Profile Styles*/
+
+body {
+  background-image: url("../images/Beer-strologyProfile.jpg");
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.container {
+  background-color: aliceblue;
+  width: 800px;
+  height: 500px;
+  align-content: center;
+  margin-left: auto;
+  margin-right: 350px;
+  margin-top: 50px;
+  text-align: center;
+  border-radius: 15px;
+}
+
+h2 {
+  font-family: "Permanent Marker", cursive;
+}
+
+#submit-user {
+  background-image: url("../images/Submit-Button.png");
+}
+
+.large-12 {
+  height: 110px;
+}
