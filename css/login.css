@@ -1,3 +1,75 @@
-.hidden {
-    display:none;
+/* .hidden {
+  display: none;
+} */
+
+body {
+  background: url("../images/StarsTable_Background_withBeer.jpg") no-repeat right
+    fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  color: black;
 }
+
+h2 {
+  font-family: 'Permanent Marker', cursive;
+  
+  /* padding: 0.25em; */
+  text-align: center;
+}
+
+#mainDiv {
+/* background: purple; */
+padding: 0em 1em 0em 1em;
+/* width: 50%; */
+margin: 60px 30% 0px 15%;
+align-content: center;
+}
+#formContainer {
+  background: #f0f8ff;
+  padding: 50px 20px 50px 20px;
+  border-radius: 15px;
+}
+
+#loginContainer {
+  background: ;
+  /* border: solid 0.25em #1779ba; */
+  /* border-radius: 0.5em; */
+  margin: 1em;
+  align-content: center;
+}
+
+/* buttons small screen */
+@media screen and (max-width: 39.9375em) {
+  #buttonContainer {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    /* background: greenyellow; */
+  }
+}
+
+/* buttons meduim screen */
+@media screen and (min-width: 40em) {
+#buttonContainer {
+  margin: auto;
+  width: 300px;
+  text-align: center;
+  /* background: yellow; */
+}
+}
+
+.button {
+  /* border: solid 0.25em #1779ba;
+  border-radius: 0.25em;
+  margin: .125em auto; */ 
+}
+
+#welcomeMsg {
+  /* background: blue; */
+  text-align: center;
+  margin: 1em;;
+}
+
+
