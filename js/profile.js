@@ -16,51 +16,46 @@ firebase.auth().onAuthStateChanged(user => {
   console.log(user);
 
   if (user) {
-
     $("#submit-image").on("click", function() {
       event.preventDefault();
       var user = firebase.auth().currentUser;
       var photoFile = $("#photo-file").get(0).files[0];
-      var photoName = (+new Date()) + '-' + photoFile.name;
-      var photoMetaData = {fileType: photoFile.type};
+      var photoName = +new Date() + "-" + photoFile.name;
+      var photoMetaData = { fileType: photoFile.type };
 
       var task = storageRef.child(photoName).put(photoFile, photoMetaData);
 
       task
-      .then(function(snapshot) {
-        return snapshot.ref.getDownloadURL();   // Will return a promise with the download link
-      })
- 
-      .then(function(downloadURL) {
-        console.log("download link: " + downloadURL);        
-        return downloadURL;
-      })
+        .then(function(snapshot) {
+          return snapshot.ref.getDownloadURL(); // Will return a promise with the download link
+        })
 
-      .then(function(downloadURL) {
-        $("#profile-image").attr("src", downloadURL);
+        .then(function(downloadURL) {
+          console.log("download link: " + downloadURL);
+          return downloadURL;
+        })
 
-        user
-          .updateProfile({
-            photoURL: downloadURL,
-          })
+        .then(function(downloadURL) {
+          $("#profile-image").attr("src", downloadURL);
 
-          .then( function() {
-            console.log("set profile pic");
-          })
+          user
+            .updateProfile({
+              photoURL: downloadURL
+            })
 
-          .catch(function(error) {
-            console.log("upload failed: " + error);
-          });
+            .then(function() {
+              console.log("set profile pic");
+            })
 
-      })
+            .catch(function(error) {
+              console.log("upload failed: " + error);
+            });
+        })
 
-      .catch(function(error) {
-        console.log("upload failed: " + error);
-      });
-
+        .catch(function(error) {
+          console.log("upload failed: " + error);
+        });
     });
-
-
 
     $("#submit-user").on("click", function() {
       event.preventDefault();
@@ -81,9 +76,9 @@ firebase.auth().onAuthStateChanged(user => {
       var userName = $("#user-name")
         .val()
         .trim();
-      
-      
-     
+
+      //age validation
+      moment().subtract(21, "years") > moment(birthday);
 
       // console.log(user);
 
@@ -91,16 +86,22 @@ firebase.auth().onAuthStateChanged(user => {
 
       //update user info w/ userName and maybe picture
 
-
       user
         .updateProfile({
-          displayName: userName,
+          displayName: userName
         })
         .then(function() {
           var profilePic = user.photoURL;
           // Update successful.
           //create custom profile
-          createProfile(firstName, lastName, birthday, userName, persStatement, profilePic);
+          createProfile(
+            firstName,
+            lastName,
+            birthday,
+            userName,
+            persStatement,
+            profilePic
+          );
           //redirect to results page
           window.location = "results.html";
         })
@@ -111,8 +112,8 @@ firebase.auth().onAuthStateChanged(user => {
         });
     });
   } else {
-    // console.log("Signed out");
-    // window.location = "login.html";
+    console.log("Signed out");
+    window.location = "login.html";
   }
 });
 
@@ -128,13 +129,6 @@ function createProfile(first, last, bday, displayName, statement, imageUrl) {
       profile_picture: imageUrl
       // Add more stuff here
     });
-
-    
-
-
-
-
-
 }
 
 //function to assign sign
