@@ -78,22 +78,16 @@ firebase.auth().onAuthStateChanged(user => {
         .trim();
 
       //age validation
-      moment().subtract(21, "years") > moment(birthday);
+      // moment().subtract(21, "years") > moment(birthday);
 
-      // console.log(user);
 
-      // console.log(firstName, lastName, birthday, persStatement, userName);
-
-      //update user info w/ userName and maybe picture
-
+      //update auth userProfile w/ user name, and run create profile function
       user
         .updateProfile({
           displayName: userName
         })
         .then(function() {
           var profilePic = user.photoURL;
-          // Update successful.
-          //create custom profile
           createProfile(
             firstName,
             lastName,
@@ -103,33 +97,113 @@ firebase.auth().onAuthStateChanged(user => {
             profilePic
           );
           //redirect to results page
-          window.location = "results.html";
+          // window.location = "results.html";
         })
 
         .catch(function(error) {
-          // An error happened.
           console.log("Err: " + error);
         });
     });
   } else {
-    console.log("Signed out");
     window.location = "login.html";
   }
 });
 
 function createProfile(first, last, bday, displayName, statement, imageUrl) {
-  firebase
-    .database()
-    .ref("users/" + displayName)
-    .set({
-      firstName: first,
-      lastName: last,
-      birthday: bday,
-      personalStatement: statement,
-      profile_picture: imageUrl
-      // Add more stuff here
-    });
-}
+  
+  var signFound = "";
 
-//function to assign sign
-//how do you upload photos
+  //assign the user's zodiac sign based on bday
+  function assignZodiac(bday) {
+
+    var zodiacSigns = {
+      aries: {
+        start: "03/21/2018",
+        end: "04/19/2018"
+      },
+      taurus: {
+        start: "04/20/2018",
+        end: "05/20/2018"
+      },
+      gemini: {
+        start: "05/21/2018",
+        end: "06/20/2018"
+      },
+      cancer: {
+        start: "06/21/2018",
+        end: "07/22/2018"
+      },
+      leo: {
+        start: "07/23/2018",
+        end: "08/22/2018"
+      },
+      virgo: {
+        start: "08/23/2018",
+        end: "09/22/2018"
+      },
+      libra: {
+        start: "09/23/2018",
+        end: "10/22/2018"
+      },
+      scorpio: {
+        start: "10/23/2018",
+        end: "11/21/2018"
+      },
+      sagittarius: {
+        start: "11/22/2018",
+        end: "12/21/2018"
+      },
+      capricorn: {
+        start: "12/22/2018",
+        end: "01/19/2019"
+      },
+      aquarius: {
+        start: "01/20/2018",
+        end: "02/18/2018"
+      },
+      pisces: {
+        start: "02/19/2018",
+        end: "03/20/2018"
+      }
+    };
+
+    var dates = bday.split("-");
+    bday = dates[1] + "/" + dates[2] + "/2018";
+
+    Object.keys(zodiacSigns).forEach(function(zodiacKey) {
+      var zodiac = zodiacSigns[zodiacKey];
+
+      var isBetween = moment(bday).isBetween(zodiac.start, zodiac.end);
+      var isSame =
+        moment(bday).isSame(zodiac.start) ||
+        moment(bday).isSame(zodiac.end);
+
+      if (isBetween || isSame) {
+        signFound = zodiacKey;
+      }     
+    });
+    
+  };
+
+  //run aZ function to update bday signFound var
+  assignZodiac(bday);
+
+  //new object in firebase for that user w/ all their info
+  firebase
+  .database()
+  .ref("users/" + displayName)
+  .set({
+    firstName: first,
+    lastName: last,
+    birthday: bday,
+    personalStatement: statement,
+    sign: signFound,
+    profile_picture: imageUrl
+  });
+
+
+};
+
+
+//still need age auth and form control
+
