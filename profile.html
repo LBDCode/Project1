@@ -6,13 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
     <script  src="https://code.jquery.com/jquery-3.3.1.min.js"  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
+    
 
     <title>Profile</title>
     <link rel="stylesheet" href="css/foundation.css">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link rel="stylesheet" href="../Project1/css/profile.css">
 </head>
 <body>
 
 <!-- first, userID, PW, birthday -->
+<div class="container">
 <div>
   <h2>Let's get you signed up!</h2>
   <form>
@@ -22,22 +26,19 @@
               <h4>We just need a little information to get started: </h4>
 
                 <div class="grid-x grid-padding-x">
-                  <div class="large-4 medium-4 cell">
+                  <div class="small-4 cell">
                     <label>First Name</label>
                     <input type="text" placeholder="First Name" id="first-name"/>
                   </div>
-                  <div class="large-4 medium-4 cell">
+                  <div class="small-4 cell">
                     <label>Last Name</label>
                     <input type="text" placeholder="Last Name" id="last-name"/>
                   </div>
+                  <div class="small-4 cell">
+                    <label>Birthday</label>
+                    <input type="date" id="birthday"/>
+                  </div>
                   
-                </div>
-
-                <div class="grid-x grid-padding-x">
-                    <div class="large-4 medium-4 cell">
-                        <label>Birthday</label>
-                        <input type="date" id="birthday"/>
-                      </div>
                 </div>
 
                 <div class="grid-x grid-padding-x">
@@ -53,9 +54,9 @@
                       <input type="text" placeholder="Choose a user name" id="user-name" />
                     </div>
                 </div>
-
+</div>
                 <!-- maybe a place to upload a photo -->
-
+                
                 <a href="#" class="button" id="submit-user">Submit</a><br/>
   </form>
 </div>

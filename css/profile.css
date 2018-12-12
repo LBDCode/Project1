@@ -23,10 +23,28 @@ h2 {
   font-family: "Permanent Marker", cursive;
 }
 
-#submit-user {
+.button {
   background-image: url("../images/Submit-Button.png");
 }
 
 .large-12 {
   height: 110px;
+}
+
+@media only screen and (max-width: 980px) {
+  .container {
+    width: 980px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 768px;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .container {
+    width: 640px;
+    position: static;
+  }
 }
