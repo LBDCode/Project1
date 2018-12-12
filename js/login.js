@@ -48,7 +48,7 @@ $("#signup-user").on("click", event => {
   //redirect to profile creation page
   firebase.auth().onAuthStateChanged(user => {
     if (user) {
-      window.location = "results.html";
+      window.location = "profile.html";
     } else {
       console.log(user);
     }
