@@ -10,11 +10,58 @@ var config = {
 firebase.initializeApp(config);
 
 var database = firebase.database();
+var storageRef = firebase.storage().ref();
 
 firebase.auth().onAuthStateChanged(user => {
   console.log(user);
 
   if (user) {
+
+    $("#submit-image").on("click", function() {
+      event.preventDefault();
+      var user = firebase.auth().currentUser;
+      var photoFile = $("#photo-file").get(0).files[0];
+      var photoName = (+new Date()) + '-' + photoFile.name;
+      var photoMetaData = {fileType: photoFile.type};
+
+      var task = storageRef.child(photoName).put(photoFile, photoMetaData);
+
+      task
+      .then(function(snapshot) {
+        return snapshot.ref.getDownloadURL();   // Will return a promise with the download link
+      })
+ 
+      .then(function(downloadURL) {
+        console.log("download link: " + downloadURL);        
+        return downloadURL;
+      })
+
+      .then(function(downloadURL) {
+        $("#profile-image").attr("src", downloadURL);
+
+        user
+          .updateProfile({
+            photoURL: downloadURL,
+          })
+
+          .then( function() {
+            console.log("set profile pic");
+          })
+
+          .catch(function(error) {
+            console.log("upload failed: " + error);
+          });
+
+      })
+
+      .catch(function(error) {
+        console.log("upload failed: " + error);
+      });
+
+    });
+
+
+
     $("#submit-user").on("click", function() {
       event.preventDefault();
       //will need an in statement to check if userName already exists?
@@ -34,26 +81,30 @@ firebase.auth().onAuthStateChanged(user => {
       var userName = $("#user-name")
         .val()
         .trim();
-      var user = firebase.auth().currentUser;
+      
+      
+     
 
-      console.log(user);
+      // console.log(user);
 
-      console.log(firstName, lastName, birthday, persStatement, userName);
+      // console.log(firstName, lastName, birthday, persStatement, userName);
 
       //update user info w/ userName and maybe picture
 
+
       user
         .updateProfile({
-          displayName: userName
-          // photoURL: "https://example.com/jane-q-user/profile.jpg"
+          displayName: userName,
         })
         .then(function() {
+          var profilePic = user.photoURL;
           // Update successful.
           //create custom profile
-          createProfile(firstName, lastName, birthday, userName, persStatement);
+          createProfile(firstName, lastName, birthday, userName, persStatement, profilePic);
           //redirect to results page
           window.location = "results.html";
         })
+
         .catch(function(error) {
           // An error happened.
           console.log("Err: " + error);
@@ -65,7 +116,7 @@ firebase.auth().onAuthStateChanged(user => {
   }
 });
 
-function createProfile(first, last, bday, displayName, statement) {
+function createProfile(first, last, bday, displayName, statement, imageUrl) {
   firebase
     .database()
     .ref("users/" + displayName)
@@ -73,10 +124,17 @@ function createProfile(first, last, bday, displayName, statement) {
       firstName: first,
       lastName: last,
       birthday: bday,
-      personalStatement: statement
-      // profile_picture : imageUrl,
+      personalStatement: statement,
+      profile_picture: imageUrl
       // Add more stuff here
     });
+
+    
+
+
+
+
+
 }
 
 //function to assign sign
