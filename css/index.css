@@ -3,7 +3,7 @@
 } */
 
 body {
-  background: url("../images/StarsTable_Background_withBeer.jpg") no-repeat
+  background: url("../images/StarsTable_Background_withBeer.png") no-repeat
     right fixed;
   background-size: cover;
   -webkit-background-size: cover;
@@ -15,6 +15,12 @@ body {
 h2 {
   font-family: "Permanent Marker", cursive;
   text-align: center;
+}
+
+h4 {
+  font-family: "Permanent Marker", cursive;
+  text-align: center;
+  color: rgb(138, 138, 138);
 }
 
 #mainDiv {
