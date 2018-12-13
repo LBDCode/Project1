@@ -3,8 +3,8 @@
 } */
 
 body {
-  background: url("../images/StarsTable_Background_withBeer.jpg") no-repeat
-    right fixed;
+  /* background: url("../images/StarsTable_Background_withBeer.jpg") no-repeat right fixed; */
+  background: gray;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -19,13 +19,13 @@ h2 {
 
 #mainDiv {
   padding: 0em 1em 0em 1em;
+  background: blue;
   /* width: 50%; */
   margin: 60px 30% 0px 15%;
   align-content: center;
 }
 #formContainer {
   background: #f0f8ff;
-  color: white;
   padding: 50px 20px 50px 20px;
   border-radius: 15px;
 }

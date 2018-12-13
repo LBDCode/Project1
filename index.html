@@ -12,55 +12,38 @@
 
     <!-- css -->
     <!-- <link rel="stylesheet" href="assets/css/reset.css"> -->
-    
-    <link rel="stylesheet" href="assets/css/foundation.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet" />
     
     <!-- javascript -->
     <script src="assets/javascript/main.js"></script>
     
   </head>
-    <title>Beerstrology</title>
+    <title>AGE VERIFICATION</title>
   </head>
   <body>
-
-    <!-- HEADER -->
-<!-- <div class="headerContainer">
-  <div class="row">
-    <div class="column" id="mainContainer">
-      ALL THE TASTY BEER STUFF! ALL THE TASTY BEER STUFF! ALL THE TASTY BEER STUFF! ALL THE TASTY BEER STUFF! ALL THE TASTY BEER STUFF! ALL THE TASTY BEER STUFF! ALL THE TASTY BEER STUFF! ALL THE TASTY BEER STUFF! ALL THE TASTY BEER STUFF! ALL THE TASTY BEER STUFF!
-
-    </div>
-  </div>
-</div> -->
-
 <!-- form -->
-<div class="formContainer">
+<div class="grid-x grid-padding-x" id="mainDiv">
+<div class="large-12 cell" id="formContainer">
+  <h2>VERIFY YOUR BIRTHDAY</h2>
   <form>
-    <div class="grid-container">
+    <div class="callout" id="loginContainer">
       <div class="grid-x grid-padding-x">
         <div class="medium-6 cell">
-          
-          <label>EMAIL
-            <input type="email" placeholder="@email.com" id="email">
+          <label>ENTER YOUR BIRTHDAY
+            <input type="date" placeholder="--/--/----" id="age">
           </label>
+        </div>
         </div>
         
-        <div class="medium-6 cell">
-          <label>PASSWORD
-            <input type="password" placeholder="password" id="password">
-          </label>
-        </div>
-
-        <!-- buttons -->
-        <div class="medium-6 cell" id = "welcomeMsg">
-          <a href="#" class="button" id="login-user">Login</a>
-          <a href="#" class="button" id="signup-user">Sign Up</a>
-          <a href="#" class="button hiden" id="signout-user">Sign Out</a>
-        </div>
       </div>  
+      <!-- buttons -->
+      <div class="medium-6 cell" id="welcomeMsg">
+        <a href="#" class="button" id="submit-user">SUBMIT</a>
     </div>    
   </form>
+</div>
 </div>
 
 <!-- scripts -->
