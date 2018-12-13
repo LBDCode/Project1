@@ -1,60 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <title>Sign up</title>
+    <title>Log In</title>
 
     <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
-    <script  src="https://code.jquery.com/jquery-3.3.1.min.js"  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
 
-   <!-- css -->
-    <link rel="stylesheet" href="css/foundation.css">
-    <link rel="stylesheet" href="css/login.css">    
-    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
-
-</head>
-<body>
-
-<!-- login/signup screen -->
-<div>
-  
-  <form>
-      <div class="grid-x grid-padding-x"id="mainDiv">
+    <!-- css -->
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/login.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Permanent+Marker"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- login/signup screen -->
+    <div>
+      <form>
+        <div class="grid-x grid-padding-x" id="mainDiv">
           <div class="large-12 cell" id="formContainer">
-              <h2>LOG IN TO BEERSTROLOGY</h2>
-            <div class="callout"  id="loginContainer">
-
-                <div class="grid-x grid-padding-x">
-                  <div class="large-4 medium-4 cell">
-                    <label>Email</label>
-                    <input type="email" placeholder="@email.com" id="email"/>
-                  </div>
-                  <div class="large-4 medium-4 cell">
-                    <label>Password</label>
-                    <input type="password" placeholder="password" id="password"/>
-                  </div>
-                  
+            <h2>LOG IN TO BEERSTROLOGY</h2>
+            <div class="callout" id="loginContainer">
+              <div class="grid-x grid-padding-x">
+                <div class="large-4 medium-4 cell">
+                  <label>Email</label>
+                  <input type="email" placeholder="@email.com" id="email" />
                 </div>
-
-  </form>
-</div>
-              <div id="welcomeMsg"></div>
-
-              <!-- buttons -->
-              <div class="row" >
-                <div class="small-centered medium-centered columns" id="buttonContainer">
-                  <a href="#" class="button" id="login-user">Login</a>
-                  <a href="#" class="button" id="signup-user">Sign Up</a>
-                  <a href="#" class="button hidden" id="signout-user">Sign Out</a><br/>
+                <div class="large-4 medium-4 cell">
+                  <label>Password</label>
+                  <input type="password" placeholder="password" id="password" />
                 </div>
               </div>
-<script src="js/login.js"></script>
-<script src="js/vendor/jquery.js"></script>
-<script src="js/vendor/what-input.js"></script>
-<script src="js/vendor/foundation.js"></script>
+            </div>
+            <!-- buttons -->
+            <div class="row">
+              <div
+                class="small-centered medium-centered columns"
+                id="buttonContainer"
+              >
+                <a href="#" class="button" id="login-user">Login</a>
+                <a href="#" class="button" id="signup-user">Sign Up</a>
+                <a href="#" class="button hidden" id="signout-user">Sign Out</a
+                ><br>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div id="welcomeMsg"></div>
 
-</body>
+    <script src="js/login.js"></script>
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/what-input.js"></script>
+    <script src="js/vendor/foundation.js"></script>
+  </body>
 </html>
