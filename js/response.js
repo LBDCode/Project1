@@ -13,7 +13,7 @@ var database = firebase.database();
 
 firebase.auth().onAuthStateChanged(user => {
   if (user) {
-    var user = firebase.auth().currentUser;
+    var user = firebase.auth().currentUser
     var displayName = firebase.auth().currentUser.displayName;
 
     $("#info-user-name").text(displayName);
@@ -29,7 +29,6 @@ firebase.auth().onAuthStateChanged(user => {
 
         horoscopeAPI(sign);
         getRandomBeer(sign);
-        
       });
 
     //calls beer api
@@ -45,6 +44,7 @@ firebase.auth().onAuthStateChanged(user => {
         method: "GET"
       }).then(function(response) {
         console.log(response)
+        
         var name = response[0].name;
         var abv = response[0].abv;
         var description = response[0].description;

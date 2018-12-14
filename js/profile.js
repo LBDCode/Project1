@@ -76,12 +76,11 @@ firebase.auth().onAuthStateChanged(user => {
       var userName = $("#user-name")
         .val()
         .trim();
-
-      //age validation
+      
+      // age validation
       // moment().subtract(21, "years") > moment(birthday);
-
-     
-      //update auth userProfile w/ user name, and run create profile function
+      
+      // update auth userProfile w/ user name, and run create profile function
       user
         .updateProfile({
           displayName: userName
@@ -97,7 +96,7 @@ firebase.auth().onAuthStateChanged(user => {
             profilePic
           );
           //redirect to results page
-          window.location = "results.html";
+          // window.location = "results.html";
         })
 
         .catch(function(error) {
@@ -200,9 +199,5 @@ function createProfile(first, last, bday, displayName, statement, imageUrl) {
     sign: signFound,
     profile_picture: imageUrl
   });
-
-
 };
 
-//function to assign sign
-//how do you upload photos
