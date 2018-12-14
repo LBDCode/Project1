@@ -80,7 +80,7 @@ firebase.auth().onAuthStateChanged(user => {
       //age validation
       // moment().subtract(21, "years") > moment(birthday);
 
-
+     
       //update auth userProfile w/ user name, and run create profile function
       user
         .updateProfile({
@@ -97,7 +97,7 @@ firebase.auth().onAuthStateChanged(user => {
             profilePic
           );
           //redirect to results page
-          // window.location = "results.html";
+          window.location = "results.html";
         })
 
         .catch(function(error) {

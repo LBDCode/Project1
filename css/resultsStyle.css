@@ -31,3 +31,21 @@ body {
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
 }
+
+.card {
+  width: 150px;
+  background-color: grey;
+}
+
+.card h3 {
+  font-size: 10px;
+}
+
+.card p {
+  font-size: 8px;
+}
+
+.card img {
+  height: 100px;
+  width: 50px;
+}

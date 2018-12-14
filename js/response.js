@@ -14,8 +14,6 @@ var database = firebase.database();
 firebase.auth().onAuthStateChanged(user => {
   if (user) {
     var user = firebase.auth().currentUser;
-    console.log(user);
-
     var displayName = firebase.auth().currentUser.displayName;
 
     $("#info-user-name").text(displayName);
@@ -30,11 +28,8 @@ firebase.auth().onAuthStateChanged(user => {
         $("#response-user-name").text(displayName);
 
         horoscopeAPI(sign);
-        // getRandomBeer(sign);
-        beerAPI("1");
-
-
-
+        getRandomBeer(sign);
+        
         // $("#signout-user").on("click", event => {
         //   firebase.auth().signOut();
           //put a redirect to signout page here
@@ -58,17 +53,12 @@ firebase.auth().onAuthStateChanged(user => {
         method: "GET"
       }).then(function(response) {
         console.log(response)
-        // for (var i = 0; i < 80; i++) {
-        //   var name = response[i].name;
-        //   var description = response[i].description;
-        //   var newBeer = {
-        //     name: name,
-        //     description: description
-        //   };
-          //beerArray.push(newBeer);
-          // $("#beerList").append(name + ": " + description + "<br><br>");
-        // }
- 
+        var name = response[0].name;
+        var abv = response[0].abv;
+        var description = response[0].description;
+        var imgSrc = response[0].image_url;
+
+        updateUI(name, abv, description, imgSrc);  
       });
     }
 
@@ -129,27 +119,40 @@ firebase.auth().onAuthStateChanged(user => {
         pisces: [78, 58, 35, 12, 1]
       };
       var getBeerIndex = Math.floor(Math.random() * Math.floor(4));
-      //var getBeer = beerMatches.userSign;
-      console.log(getBeerIndex);
-      //console.log(beerMatches.userSign[getBeerIndex]);
-      console.log(beerMatches[userSign][getBeerIndex]);
-      console.log(userSign);
-      console.log(Object.keys(beerMatches)[0]);
 
       var returnBeer = beerMatches[userSign];
-      returnBeer.forEach;
-      console.log(returnBeer);
       returnBeer.splice(getBeerIndex, 1);
-      console.log(returnBeer);
+      $.each(returnBeer, function(index, value) {
+        beerAPI(value);
+      });
+    }
+ 
+    function updateUI(beerName, beerAbv, descrip, imgURL) {
+      console.log(beerName, beerAbv, descrip, imgURL);
+
+      var newCard = $("<div>");
+      var cardImg = $("<img>");
+      var sectionDiv = $("<div>");
+      var sectionHead = $("<h3>");
+      var sectionText = $("<p>");
+
+      newCard.addClass("card");
+      cardImg.attr("src", imgURL);
+      newCard.append(cardImg);
+      sectionDiv.addClass("card-section");
+      
+      sectionHead.text(beerName + " " + beerAbv + "% ABV");
+      sectionDiv.append(sectionHead);
+      
+      sectionText.text(descrip);     
+      sectionDiv.append(sectionText);
+
+      newCard.append(sectionDiv);
+      $("#beer-recs").append(newCard);
     }
 
-    // function updateUI(beerResponse) {
-    //   beerMatches.foreach();
-    // }
+ 
 
-    // beerAPI();
-
-    // getRandomBeer(birthday);
   } else {
     console.log("Signed out");
     // window.location = "login.html";
