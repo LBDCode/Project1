@@ -13,7 +13,7 @@ body {
 
 #mainContainer {
   background-color: aliceblue;
-  width: auto;
+  width: 600px;
   height: fit-content;
   align-content: center;
   margin-left: auto;
@@ -33,8 +33,8 @@ textarea {
 }
 
 #submit-user {
-  background-image: url("../images/Submit-Button.png");
-  
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #profile-image {
