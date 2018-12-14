@@ -13,7 +13,7 @@ var database = firebase.database();
 
 firebase.auth().onAuthStateChanged(user => {
   if (user) {
-    var user = firebase.auth().currentUser
+    var user = firebase.auth().currentUser;
     var displayName = firebase.auth().currentUser.displayName;
 
     $("#info-user-name").text(displayName);
@@ -44,18 +44,17 @@ firebase.auth().onAuthStateChanged(user => {
         url: queryURL,
         method: "GET"
       }).then(function(response) {
-        console.log(response)
-        
+        console.log(response);
+
         var name = response[0].name;
         var abv = response[0].abv;
         var description = response[0].description;
         var imgSrc = response[0].image_url;
 
-        updateUIBeer(name, abv, description, imgSrc);  
+        updateUIBeer(name, abv, description, imgSrc);
       });
     }
 
- 
     //calls horoscope api
 
     function horoscopeAPI(userSign) {
@@ -79,10 +78,10 @@ firebase.auth().onAuthStateChanged(user => {
       request.then(function(resp) {
         var predictionDate = resp.prediction_date;
         predictionDate = predictionDate.split("-");
- 
+
         predictionDate =
           predictionDate[1] + "-" + predictionDate[0] + "-" + predictionDate[2];
-  
+
         $("#prediction").before(predictionDate);
 
         var predictionText = JSON.stringify(resp.prediction.emotions);
@@ -91,9 +90,8 @@ firebase.auth().onAuthStateChanged(user => {
         predictionText += JSON.stringify(resp.prediction.personal_life);
         predictionText += JSON.stringify(resp.prediction.profession);
         predictionText += JSON.stringify(resp.prediction.travel);
-        predictionText = predictionText.replace(/"/g, '')
+        predictionText = predictionText.replace(/"/g, "");
         $("#horoscope").text(predictionText);
-
       });
     }
 
@@ -120,9 +118,8 @@ firebase.auth().onAuthStateChanged(user => {
         beerAPI(value);
       });
     }
- 
-    function updateUIBeer(beerName, beerAbv, descrip, imgURL) {
 
+    function updateUIBeer(beerName, beerAbv, descrip, imgURL) {
       var newCard = $("<div>");
       var cardImg = $("<img>");
       var sectionDiv = $("<div>");
@@ -133,11 +130,11 @@ firebase.auth().onAuthStateChanged(user => {
       cardImg.attr("src", imgURL);
       newCard.append(cardImg);
       sectionDiv.addClass("card-section");
-      
+
       sectionHead.text(beerName + " " + beerAbv + "% ABV");
       sectionDiv.append(sectionHead);
-      
-      sectionText.text(descrip);     
+
+      sectionText.text(descrip);
       sectionDiv.append(sectionText);
 
       newCard.append(sectionDiv);
@@ -145,7 +142,6 @@ firebase.auth().onAuthStateChanged(user => {
     }
 
     function updateUIImg(sign) {
-
       var signCap = sign.charAt(0).toUpperCase() + sign.slice(1);
       var signTxt = signCap + ".png";
       var signConst = signCap + "Constilation.png";
@@ -154,16 +150,12 @@ firebase.auth().onAuthStateChanged(user => {
       $("#sign").attr("src", "images/" + signTxt);
       $("#signConst").attr("src", "images/" + signConst);
       $("#signSymb").attr("src", "images/" + signSym);
-
     }
-
-
   } else {
     console.log("Signed out");
     window.location = "login.html";
   }
 });
-
 
 $(".logout-button").on("click", event => {
   firebase.auth().signOut();
