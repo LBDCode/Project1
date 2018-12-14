@@ -15,16 +15,36 @@ body {
   color: black;
 }
 
-.horoscopeContainer {
-  background-color: aliceblue;
-  width: 650px;
-  /* height: 350px; */
-  align-content: center;
-  margin-left: auto;
-  margin-right: 350px;
-  margin-top: 20px;
-  text-align: center;
-  border-radius: 15px;
+/* small screen */
+@media screen and (max-width: 39.9375em) {
+  .horoscopeContainer {
+    background-color: aliceblue;
+    width: auto;
+    /* height: 350px; */
+    align-content: center;
+    margin: auto;
+
+    margin-top: 20px;
+    align-content: center;
+    text-align: center;
+    border-radius: 15px;
+    min-width: 200px;
+  }
+}
+
+/* medium screen */
+@media screen and (min-width: 40em) {
+  .horoscopeContainer {
+    background-color: aliceblue;
+    width: auto;
+    /* height: 350px; */
+    align-content: center;
+    margin-left: auto;
+    margin-right: 350px;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 15px;
+  }
 }
 
 @keyframes fadeIn {

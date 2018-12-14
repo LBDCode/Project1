@@ -1,5 +1,3 @@
-
-
 var beerMatches = {
   aries: [40, 55, 46, 45, 1],
   taurus: [14, 15, 64, 27, 1],
@@ -15,54 +13,51 @@ var beerMatches = {
   pisces: [78, 58, 35, 12, 1]
 };
 
-
 function beerAPI() {
   var apiKey = "?key=efb2f54c9ecd8ab0ff99ca273567c56c";
   var beerName = "page=1&per_page=80";
-  var queryURL = "https://api.punkapi.com/v2/beers?"; 
+  var queryURL = "https://api.punkapi.com/v2/beers?";
 
-  queryURL = queryURL + apiKey + beerName
+  queryURL = queryURL + apiKey + beerName;
 
-$.ajax({
-  url: queryURL,
-  method: "GET"
-}).then(function (response) {
-  for (var i = 0; i < 80; i++) {
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).then(function(response) {
+    for (var i = 0; i < 80; i++) {
       var name = response[i].name;
       var description = response[i].description;
       var newBeer = {
-          "name": name,
-          "description": description
+        name: name,
+        description: description
       };
       beerArray.push(newBeer);
       $("#beerList").append(name + ": " + description + "<br><br>");
+    }
+    console.log(beerArray);
+  });
 }
-  console.log(beerArray);
-});
-
-
-};
 
 function horoscopeAPI() {
-  var userId = '603274';
-  var apiKey = '429a9b7ab74e0dca834c1032c00446b0';
-  var data = {tzone: 5.5};
+  var userId = "603274";
+  var apiKey = "429a9b7ab74e0dca834c1032c00446b0";
+  var data = { tzone: 5.5 };
   var sign = "aries";
 
-var request = $.ajax({
+  var request = $.ajax({
     url: "https://json.astrologyapi.com/v1/sun_sign_prediction/daily/" + sign,
     method: "POST",
-    dataType:'json',
+    dataType: "json",
     headers: {
-        "authorization": "Basic " + btoa(userId+":"+apiKey),
-  },
-    data:JSON.stringify(data)
+      authorization: "Basic " + btoa(userId + ":" + apiKey)
+    },
+    data: JSON.stringify(data)
   });
 
   request.then(function(resp) {
-      console.log(resp);
+    console.log(resp);
   });
-};
+}
 
 beerAPI();
 horoscopeAPI();
