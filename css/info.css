@@ -6,14 +6,11 @@ body {
 }
 
 .container {
-  background-color: aliceblue;
   width: 650px;
   height: 350px;
-  align-content: center;
   margin-left: auto;
   margin-right: 350px;
-  margin-top: 150px;
-  text-align: center;
+  margin-top: 30px;
   border-radius: 15px;
 }
 
@@ -51,4 +48,15 @@ body {
 
 .top-bar li {
   list-style-type: none;
+}
+
+h2 {
+  font-family: "Permanent Marker", cursive;
+  font-size: 50px;
+}
+
+h2,
+h5 {
+  color: white;
+  text-align: center;
 }

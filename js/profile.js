@@ -76,12 +76,11 @@ firebase.auth().onAuthStateChanged(user => {
       var userName = $("#user-name")
         .val()
         .trim();
-
-      //age validation
+      
+      // age validation
       // moment().subtract(21, "years") > moment(birthday);
-
-
-      //update auth userProfile w/ user name, and run create profile function
+      
+      // update auth userProfile w/ user name, and run create profile function
       user
         .updateProfile({
           displayName: userName
@@ -200,10 +199,5 @@ function createProfile(first, last, bday, displayName, statement, imageUrl) {
     sign: signFound,
     profile_picture: imageUrl
   });
-
-
 };
-
-
-//still need age auth and form control
 

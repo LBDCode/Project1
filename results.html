@@ -14,6 +14,16 @@
 
   </head>
   <body>
+
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <li><img id="logo" src="images/Beer-strology.png"> </li>
+      </div>
+      <div class="top-bar-right">
+          
+          <button type="button" class="logout-button">Logout</button>
+      </div>
+    </div>
   <div class="container">
     <div class="row">
       <div class="medium-12 columns">
@@ -21,22 +31,8 @@
           <h2 id="response-user-name"></h2>
           <h3 id="prediction"></h3>
           <p id="horoscope"></p>
-
         </div>
-        <div class="row small-up-4">
-          <div class="column">
-            <img class="thumbnail" id="beer1" src="https://placehold.it/250x200" />
-          </div>
-          <div class="column">
-            <img class="thumbnail" id="beer2" src="https://placehold.it/250x200" />
-          </div>
-          <div class="column">
-            <img class="thumbnail" id="beer3" src="https://placehold.it/250x200" />
-          </div>
-          <div class="column">
-            <img class="thumbnail" id="beer4" src="https://placehold.it/250x200" />
-          </div>
-        </div>
+        <div class="row small-up-4" id="beer-recs"></div>
       </div>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
