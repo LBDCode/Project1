@@ -29,6 +29,7 @@ firebase.auth().onAuthStateChanged(user => {
 
         horoscopeAPI(sign);
         getRandomBeer(sign);
+        updateUIImg(sign);
       });
 
     //calls beer api
@@ -50,10 +51,11 @@ firebase.auth().onAuthStateChanged(user => {
         var description = response[0].description;
         var imgSrc = response[0].image_url;
 
-        updateUI(name, abv, description, imgSrc);  
+        updateUIBeer(name, abv, description, imgSrc);  
       });
     }
 
+ 
     //calls horoscope api
 
     function horoscopeAPI(userSign) {
@@ -119,8 +121,7 @@ firebase.auth().onAuthStateChanged(user => {
       });
     }
  
-    function updateUI(beerName, beerAbv, descrip, imgURL) {
-      console.log(beerName, beerAbv, descrip, imgURL);
+    function updateUIBeer(beerName, beerAbv, descrip, imgURL) {
 
       var newCard = $("<div>");
       var cardImg = $("<img>");
@@ -143,10 +144,23 @@ firebase.auth().onAuthStateChanged(user => {
       $("#beer-recs").append(newCard);
     }
 
+    function updateUIImg(sign) {
+
+      var signCap = sign.charAt(0).toUpperCase() + sign.slice(1);
+      var signTxt = signCap + ".png";
+      var signConst = signCap + "Constilation.png";
+      var signSym = signCap + "Symbol.png";
+
+      $("#sign").attr("src", "images/" + signTxt);
+      $("#signConst").attr("src", "images/" + signConst);
+      $("#signSymb").attr("src", "images/" + signSym);
+
+    }
+
 
   } else {
     console.log("Signed out");
-    // window.location = "login.html";
+    window.location = "login.html";
   }
 });
 

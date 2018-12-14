@@ -96,7 +96,7 @@ firebase.auth().onAuthStateChanged(user => {
             profilePic
           );
           //redirect to results page
-          // window.location = "results.html";
+          window.location = "results.html";
         })
 
         .catch(function(error) {
