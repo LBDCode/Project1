@@ -1,3 +1,8 @@
+html,
+body {
+  height: 100%;
+}
+
 body {
   background-image: url("../images/StarsTable_Background_withBeer.jpg");
   background-size: auto;
@@ -12,6 +17,16 @@ body {
   margin-right: 350px;
   margin-top: 30px;
   border-radius: 15px;
+}
+
+.callout {
+  background-color: aliceblue;
+  width: 600px;
+  height: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  border-radius: 25px;
 }
 
 @keyframes fadeIn {
@@ -59,4 +74,9 @@ h2,
 h5 {
   color: white;
   text-align: center;
+}
+
+img {
+  height: 250px;
+  width: auto;
 }
