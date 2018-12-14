@@ -20,7 +20,8 @@
   </head>
   <body>
     <!-- first, userID, PW, birthday -->
-    <div class="grid-x grid-padding-x" id="mainContainer"> <!--I added an id for this div-->
+    <div class="grid-x grid-padding-x" id="mainContainer">
+      <!-- I added an id for this div -->
       <div class="large-12 cell">
         <h2>Let's get you signed up!</h2>
         <div class="callout">
@@ -37,32 +38,34 @@
             <div class="small-4 cell">
               <label>Birthday</label> <input type="date" id="birthday" />
             </div>
-            <div class="grid-x grid-padding-x"> 
-                <div class="middle-12 cell">
-                  <label>A little about yourself:</label>
-                  <textarea
-                    placeholder="What kind of beer do you like?"
-                    rows="3"
-                    id="personal-statement"
-                  ></textarea>
-                  </div>
+            <div class="grid-x grid-padding-x">
+              <div class="middle-12 cell">
+                <label>A little about yourself:</label>
+                <textarea
+                  placeholder="What kind of beer do you like?"
+                  rows="3"
+                  id="personal-statement"
+                ></textarea>
+              </div>
             </div>
           </div>
-      </div>
-      <div class="callout2">
-        <div class="grid-x grid-padding-x">
-          <div class="large-12 cell">
-            <label>Upload a profile picture</label>
-            <input type="file" id="photo-file" accept="image/*" />
-            <a href="#" class="button" id="submit-image">Upload file</a><br />
-            <img id="profile-image" src="" />
-            <a href="#" class="button" id="submit-user">Submit</a><br />
+        </div>
+        <div class="callout2">
+          <div class="grid-x grid-padding-x">
+            <div class="large-12 cell">
+              <label>Upload a profile picture</label>
+              <input type="file" id="photo-file" accept="image/*" />
+              <a href="#" class="button" id="submit-image">Upload file</a><br />
+              <img id="profile-image" src="" />
+              <div>
+                <a href="#" class="button" id="submit-user">Submit</a><br />
+              </div>
+            </div>
+            <!-- you want your content to go here for the container to grow -->
           </div>
-          <!-- you want your content to go here for the container to grow -->
         </div>
       </div>
     </div>
-  </div>
     <script src="js/profile.js"></script>
     <script src="js/vendor/jquery.js"></script>
     <script src="js/vendor/what-input.js"></script>
