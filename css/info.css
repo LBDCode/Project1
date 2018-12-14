@@ -46,6 +46,8 @@ body {
 
 .top-bar {
   background: transparent;
+  margin-left: 8px;
+  margin-right: 8px;
 }
 
 .logout-button {
@@ -79,4 +81,8 @@ h5 {
 img {
   height: 250px;
   width: auto;
+}
+
+#logo {
+  margin-top: 8px;
 }
