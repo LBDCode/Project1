@@ -1,3 +1,8 @@
+html,
+body {
+  height: 100%;
+}
+
 body {
   background-image: url("../images/StarsTable_Background_withBeer.jpg");
   background-size: auto;
@@ -5,14 +10,14 @@ body {
   background-position: center;
 }
 
-.container {
+#container {
   background-color: aliceblue;
   width: 650px;
-  height: 350px;
+  height: 360px;
   align-content: center;
   margin-left: auto;
   margin-right: 350px;
-  margin-top: 150px;
+  margin-top: 10px;
   text-align: center;
   border-radius: 15px;
 }
@@ -51,4 +56,54 @@ body {
 
 .top-bar li {
   list-style-type: none;
+}
+
+#sign-name {
+  height: 100px;
+  width: auto;
+  padding-top: 20px;
+  justify-content: center;
+}
+
+#sign-name img {
+  border: none;
+  display: block;
+  margin: 0 auto;
+  height: 55px;
+  width: auto;
+}
+
+#constellation {
+  float: left;
+  height: 200px;
+  width: auto;
+  padding-top: 20px;
+  justify-content: center;
+  margin-left: 30px;
+}
+
+#constellation img {
+  border: none;
+  display: block;
+  margin: 0 auto;
+  height: 180px;
+  width: auto;
+}
+
+#symbol {
+  float: left;
+  height: 200px;
+  width: auto;
+  padding-top: 10px;
+  justify-content: center;
+  margin-top: 230px;
+}
+
+#symbol img {
+  border: none;
+  display: block;
+  margin: 0 auto;
+  margin-left: -30px;
+  height: 120px;
+  width: auto;
 }
