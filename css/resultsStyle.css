@@ -101,10 +101,12 @@ body {
 #beer-recs {
   background-color: aliceblue;
   /* width: 650px; */
+  max-width: 25%;
   align-content: center;
   margin-left: auto;
   margin-right: 350px;
   margin-top: 20px;
   text-align: center;
   border-radius: 15px;
+  text-align: center;
 }
