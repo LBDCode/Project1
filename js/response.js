@@ -126,7 +126,7 @@ firebase.auth().onAuthStateChanged(user => {
       var sectionHead = $("<h3>");
       var sectionText = $("<p>");
 
-      newCard.addClass("card");
+      newCard.addClass("card").addClass("small-2").addClass("columns");
       cardImg.attr("src", imgURL);
       newCard.append(cardImg);
       sectionDiv.addClass("card-section");
@@ -153,11 +153,15 @@ firebase.auth().onAuthStateChanged(user => {
     }
   } else {
     console.log("Signed out");
-    window.location = "login.html";
+    window.location = "index.html";
   }
 });
 
 $(".logout-button").on("click", event => {
   firebase.auth().signOut();
-  window.location = "login.html";
+  window.location = "index.html";
+});
+
+$(".profile-button").on("click", event => {
+  window.location = "info.html";
 });

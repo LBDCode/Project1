@@ -41,11 +41,16 @@ firebase.auth().onAuthStateChanged(user => {
       });
   } else {
     console.log("Signed out");
-    window.location = "login.html";
-  }
+    window.location = "index.html";
+  }  
 
-  $(".logout-button").on("click", event => {
-    firebase.auth().signOut();
-    window.location = "login.html";
-  });
+});
+
+$(".logout-button").on("click", event => {
+  firebase.auth().signOut();
+  window.location = "index.html";
+});
+
+$(".results-button").on("click", event => {
+  window.location = "results.html";
 });
