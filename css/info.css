@@ -1,0 +1,90 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-image: url("../images/StarsTable_Background_withBeer.jpg");
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.container {
+  width: 650px;
+  height: 350px;
+  margin-left: auto;
+  margin-right: 350px;
+  margin-top: 30px;
+  border-radius: 15px;
+}
+
+.card img {
+  max-width: 50px;
+  max-height: 75px;
+
+}
+
+.callout {
+  background-color: aliceblue;
+  width: 600px;
+  height: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  border-radius: 25px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+.top-bar {
+  background: transparent;
+}
+
+.logout-button, .results-button {
+  height: 35px;
+  width: 110px;
+  font-size: 18px;
+  background-color: rgba(240, 248, 255, 0.534);
+  border-radius: 20px;
+  color: rgb(173, 131, 25);
+  margin: 10px;
+}
+
+#logo {
+  height: 70px;
+  width: 400px;
+}
+
+.top-bar li {
+  list-style-type: none;
+}
+
+h2 {
+  font-family: "Permanent Marker", cursive;
+  font-size: 50px;
+}
+
+h2,
+h5 {
+  color: white;
+  text-align: center;
+}
+
+img {
+  height: 250px;
+  width: auto;
+}
