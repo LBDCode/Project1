@@ -19,6 +19,12 @@ body {
   border-radius: 15px;
 }
 
+.card img {
+  max-width: 50px;
+  max-height: 75px;
+
+}
+
 .callout {
   background-color: aliceblue;
   width: 600px;
@@ -48,12 +54,14 @@ body {
   background: transparent;
 }
 
-.logout-button {
-  height: 55px;
-  width: 100px;
+.logout-button, .results-button {
+  height: 35px;
+  width: 110px;
   font-size: 18px;
-  background-color: aliceblue;
-  color: black;
+  background-color: rgba(240, 248, 255, 0.534);
+  border-radius: 20px;
+  color: rgb(173, 131, 25);
+  margin: 10px;
 }
 
 #logo {

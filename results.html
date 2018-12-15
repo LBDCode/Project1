@@ -4,48 +4,75 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
-    <script  src="https://code.jquery.com/jquery-3.3.1.min.js"  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
     <title>Results</title>
     <link
       rel="stylesheet"
-      href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css"/>
-    <link rel="stylesheet" href="css/resultsStyle.css"/>
-
+      href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css"
+    />
+    <link rel="stylesheet" href="css/resultsStyle.css" />
   </head>
   <body>
-
     <div class="top-bar">
       <div class="top-bar-left">
-        <li><img id="logo" src="images/Beer-strology.png"> </li>
+        <li><img id="logo" src="images/Beer-strology.png" /></li>
       </div>
       <div class="top-bar-right">
-          
-          <button type="button" class="logout-button">Logout</button>
+        <button type="button" class="logout-button">Logout</button>
+        <button type="button" class="profile-button">Profile</button>
       </div>
     </div>
-  <img id="sign" src="">
-  <img id="signConst" src="">
-  <img id="signSymb" src="">
 
-  <div class="container">
     <div class="row">
-      <div class="medium-12 columns">
-        <div class="user-horoscope">
-          <h2 id="response-user-name"></h2>
-          <h3 id="prediction"></h3>
-          <p id="horoscope"></p>
-        </div>
-        <div class="row small-up-4" id="beer-recs"></div>
+      <div class="small-2 columns" id="leftContainer">
+        <img class="show-for-medium"  id="signConst" src="" />
+
+        <img class="show-for-medium" id="signSymb" src="" />
       </div>
+
+      <div class="small-10 columns" id="rightContainer">
+        <img id="sign" src="" />
+
+        <div class="horoscopeContainer">
+          <div class="user-horoscope">
+            <h2 id="response-user-name"></h2>
+            <h3 id="prediction"></h3>
+            <p id="horoscope"></p>    
+          </div>
+          </div>
+        </div>
+        
+
+      </div> 
+         
+    </div>
+
+    <div class="row beerContainer">
+      <!-- <div class="small-2 columns" id="leftContainer">
+      </div> -->
+    
+      <div class="columns small-8 small-centered" >
+        <div class="" id="beer-recs">   
+      </div>
+
+      
+    </div
+     
+
+
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
     <script>
       $(document).foundation();
     </script>
-     <script src="js/response.js"></script>
-     <script src="js/vendor/jquery.js"></script>
-     <script src="js/vendor/what-input.js"></script>
-     <script src="js/vendor/foundation.js"></script>
+    <script src="js/response.js"></script>
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/what-input.js"></script>
+    <script src="js/vendor/foundation.js"></script>
   </body>
 </html>
